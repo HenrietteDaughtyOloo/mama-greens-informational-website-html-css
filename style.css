@@ -1,11 +1,10 @@
 body {
     font-family: Arial, sans-serif;
-    
-    /* background-color: #f2f2f2; */
+     
 }
 
 header {
-     background-color: white;
+   
       padding: 25px;  
 }
 
@@ -20,7 +19,7 @@ nav ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    /* background-color: #66a80f; */
+   
 }
 
 
@@ -42,6 +41,7 @@ nav li a:hover {
     background-color: lightgreen;
     transition: all 0.3s ease-in-out;
     color: #66a80f;
+    border-radius: 20px;
 
 }
 
@@ -87,3 +87,15 @@ span{
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
