@@ -1,0 +1,60 @@
+
+
+
+Here's an example implementation of the custom Adapter class:
+
+public class FibonacciAdapter extends RecyclerView.Adapter<FibonacciAdapter.ViewHolder> {
+
+    private ArrayList<Long> mData = new ArrayList<>();
+
+    FibonacciAdapter() {
+        // Generate fibonacci numbers from 1 to 100 and store them in mData
+        long prev = 0, curr = 1;
+        for (int i = 1; i <= 100; i++) {
+            mData.add(curr);
+            long next = prev + curr;
+            prev = curr;
+            curr = next;
+        }
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        // Inflate item layout file
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_fibonacci, parent, false);
+        return new ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+        // Bind fibonacci number and index to TextViews
+        holder.index.setText(String.valueOf(position + 1));
+        holder.value.setText(String.valueOf(mData.get(position)));
+
+        // Add onClickListener to value TextView to expand on click
+        holder.value.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (holder.value.getMaxLines() == 1000) {
+                    holder.value.setMaxLines(1);
+                } else {
+                    holder.value.setMaxLines(1000);
+                }
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return mData.size();
+    }
+
+    static class ViewHolder extends RecyclerView.ViewHolder {
+        final
+
++
+stackoverflow
+StackOverflow
+
